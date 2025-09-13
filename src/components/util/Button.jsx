@@ -1,12 +1,14 @@
 import { motion } from "framer-motion"
-function Button({children, className}) {
+function Button({children, className, onClick, type="button"}) {
     return (
-        <motion.div className={className}
+        <motion.button className={className} onClick={onClick} type={type}
             whileHover={{scale: 1.1}}
             whileTap={{scale: 0.95}}
+
+        
         >
             {children}
-        </motion.div>
+        </motion.button>
     )
 }
 

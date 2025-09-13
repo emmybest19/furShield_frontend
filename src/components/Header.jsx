@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { FaBars } from "react-icons/fa";
+// import { FaBars } from "react-icons/fa";
+
 
 import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Button from "./util/Button";
 function Header() {
+    const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   return (
     <section className="max-w-[1440px] mx-auto px-10 py-2 ">
@@ -46,7 +48,7 @@ function Header() {
           </NavLink>
         </div>
         <div className="justify-center items-center">
-          <Button className="hidden md:block px-[27.5px] py-[14px] bg-[#14b8a6] text-white rounded-full cursor-pointer  ">
+          <Button className="hidden md:block px-[27.5px] py-[14px] bg-[#14b8a6] text-white rounded-full cursor-pointer  " onClick={() => navigate("/signUp")}>
             Get Started
           </Button>
           <button
@@ -92,7 +94,7 @@ function Header() {
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 1, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className=" flex flex-col h-screen space-y-5"
+          className=" flex flex-col h-screen space-y-5 md:hidden"
         >
           <div className="flex flex-col justify-center items-center space-y-5">
             <NavLink
